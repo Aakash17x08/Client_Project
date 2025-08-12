@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Video Editor Portfolio Design System */
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 240 10% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 4%;
+
+    /* Creative purple theme for video editing */
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 262 100% 75%;
+
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 6% 10%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Creative accent colors */
+    --creative-blue: 217 91% 60%;
+    --creative-orange: 25 95% 53%;
+    --creative-pink: 328 86% 70%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 262 83% 58%;
+
+    /* Professional gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-creative: linear-gradient(135deg, hsl(var(--creative-blue)), hsl(var(--primary)), hsl(var(--creative-pink)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+
+    /* Professional shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(240 10% 4% / 0.1);
+
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 7% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 7% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Creative purple theme for dark mode */
+    --primary: 262 83% 65%;
+    --primary-foreground: 240 10% 4%;
+    --primary-glow: 262 100% 80%;
+
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 262 83% 65%;
+    --accent-foreground: 240 10% 4%;
+
+    /* Creative accent colors for dark mode */
+    --creative-blue: 217 91% 65%;
+    --creative-orange: 25 95% 58%;
+    --creative-pink: 328 86% 75%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 262 83% 65%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-creative: linear-gradient(135deg, hsl(var(--creative-blue)), hsl(var(--primary)), hsl(var(--creative-pink)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+
+    /* Dark mode shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+}
+
+@layer components {
+  /* Professional button variants */
+  .btn-creative {
+    @apply bg-gradient-to-r from-creative-blue via-primary to-creative-pink;
+    @apply text-white font-medium px-6 py-3 rounded-lg;
+    @apply hover:shadow-[var(--shadow-glow)] transform hover:scale-105;
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .btn-elegant {
+    @apply bg-[var(--gradient-primary)] text-primary-foreground;
+    @apply px-6 py-3 rounded-lg font-medium;
+    @apply hover:shadow-[var(--shadow-elegant)] transform hover:scale-105;
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Portfolio card styles */
+  .portfolio-card {
+    @apply bg-card rounded-xl p-6 border;
+    @apply shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)];
+    @apply transform hover:scale-[1.02] transition-all duration-300 ease-out;
+  }
+
+  /* Creative text gradient */
+  .text-gradient {
+    @apply bg-[var(--gradient-creative)] bg-clip-text text-transparent;
+  }
+
+  /* Smooth animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
