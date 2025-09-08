@@ -37,5 +37,21 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+import pandas as pd
 
+# Sample DataFrame
+data = {
+    'Age': ['25', '30', '35', '40'],  # Age stored as string
+    'Salary': [50000.50, 60000.75, 70000.00, 80000.25]
+}
+df = pd.DataFrame(data)
+
+# Convert 'Age' column from string to integer
+df['Age'] = df['Age'].astype(int)
+
+# Convert 'Salary' column from float to integer (if needed)
+df['Salary'] = df['Salary'].astype(int)
+
+print(df)
+print(df.dtypes)
 
